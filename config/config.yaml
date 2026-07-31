@@ -7,7 +7,7 @@ ui:
   header: "LoutikCLOUD"
   dashboard-heading: "État des Services"
   dashboard-subheading: "Monitoring temps réel des plateformes LoutikCLOUD"
-  logo: https://raw.githubusercontent.com/loutik/design-assets/main/loutikstatus/banniere_loutikstatus.png
+  logo: https://raw.githubusercontent.com/loutik/design-assets/main/loutikstatus/logo_loutikstatus.png
 
 announcements:
   - timestamp: 2026-06-27T07:00:00Z
