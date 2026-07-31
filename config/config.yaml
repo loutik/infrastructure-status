@@ -1,0 +1,94 @@
+storage:
+  type: sqlite
+  path: /config/data.db
+
+ui:
+  title: "LoutikCLOUD - Statut"
+  header: "LoutikCLOUD"
+  dashboard-heading: "État des Services"
+  dashboard-subheading: "Monitoring temps réel des plateformes LoutikCLOUD"
+  logo: https://raw.githubusercontent.com/loutik/design-assets/main/loutikstatus/banniere_loutikstatus.png
+
+announcements:
+  - timestamp: 2026-06-27T07:00:00Z
+    type: warning
+    message: "Refonte de l'infrastructure en cours pendant un mois : des interruptions ponctuelles sont possibles malgré nos efforts pour les limiter."
+#  - timestamp: 2025-11-07T16:15:00Z
+#    type: operational
+#    message: "Database maintenance completed successfully. All systems operational."
+#  - timestamp: 2025-11-07T12:00:00Z
+#    type: information
+#    message: "New monitoring dashboard features will be deployed next week"
+#  - timestamp: 2026-01-24T14:00:00Z
+#    type: outage
+#    message: "Suite à une panne"
+#    archived: true
+
+endpoints:
+  # GROUPE : SITES INTERNET
+  - name: "Site Vitrine"
+    group: "Sites internet"
+    url: "https://www.loutik.fr"
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: "Portfolio"
+    group: "Sites internet"
+    url: "https://louis.loutik.fr"
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: "Documentation"
+    group: "Sites internet"
+    url: "https://docs.loutik.fr"
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+
+  # GROUPE : COMPUTE (HYPERVISEURS)
+  - name: "Hyperviseur 1"
+    group: "Compute"
+    url: "icmp://pve1.loutik.fr"
+    display-name: "Hyperviseur 1"
+    client:
+      dns-resolver: "udp://10.0.13.1:53"
+    interval: 10s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: "Hyperviseur 2"
+    group: "Compute"
+    url: "icmp://pve2.loutik.fr"
+    display-name: "Hyperviseur 2"
+    client:
+      dns-resolver: "udp://10.0.13.1:53"
+    interval: 10s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: "Hyperviseur 3"
+    group: "Compute"
+    url: "icmp://pve3.loutik.fr"
+    display-name: "Hyperviseur 3"
+    client:
+      dns-resolver: "udp://10.0.13.1:53"
+    interval: 10s
+    conditions:
+      - "[CONNECTED] == true"
+
+  # GROUPE : SERVICES
+  - name: "SSO Authentik"
+    group: "Services"
+    url: "https://sso.loutik.fr"
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: "Speedtest"
+    group: "Services"
+    url: "https://speedtest.loutik.fr"
+    interval: 10m
+    conditions:
+      - "[STATUS] == 200"

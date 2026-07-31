@@ -1,0 +1,18 @@
+# ---
+# Type        : docker-compose
+# Auteur      : Louis MEDO - louis.medo@loutik.fr
+# Description : Hébergement de la page de statut de loutik.
+# ---
+---
+
+services:
+  gatus:
+    image: ghcr.io/twin/gatus:stable
+    container_name: gatus
+    restart: always
+    ports:
+      - "127.0.0.1:1025:8080"
+    volumes:
+      - ./config:/config
+    cap_add:
+      - NET_RAW
