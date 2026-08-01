@@ -50,7 +50,7 @@ endpoints:
   # GROUPE : COMPUTE (HYPERVISEURS)
   - name: "Hyperviseur 1"
     group: "Compute"
-    url: "icmp://pve1.loutik.fr"
+    url: "icmp://pve1.infra.loutik.fr"
     display-name: "Hyperviseur 1"
     client:
       dns-resolver: "udp://10.0.13.1:53"
@@ -60,7 +60,7 @@ endpoints:
 
   - name: "Hyperviseur 2"
     group: "Compute"
-    url: "icmp://pve2.loutik.fr"
+    url: "icmp://pve2.infra.loutik.fr"
     display-name: "Hyperviseur 2"
     client:
       dns-resolver: "udp://10.0.13.1:53"
@@ -70,7 +70,7 @@ endpoints:
 
   - name: "Hyperviseur 3"
     group: "Compute"
-    url: "icmp://pve3.loutik.fr"
+    url: "icmp://pve3.infra.loutik.fr"
     display-name: "Hyperviseur 3"
     client:
       dns-resolver: "udp://10.0.13.1:53"
