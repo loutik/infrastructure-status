@@ -13,6 +13,7 @@ announcements:
   - timestamp: 2026-06-27T07:00:00Z
     type: warning
     message: "Refonte de l'infrastructure en cours pendant un mois : des interruptions ponctuelles sont possibles malgré nos efforts pour les limiter."
+    archived: true
 #  - timestamp: 2025-11-07T16:15:00Z
 #    type: operational
 #    message: "Database maintenance completed successfully. All systems operational."
@@ -43,6 +44,13 @@ endpoints:
   - name: "Documentation"
     group: "Sites internet"
     url: "https://docs.loutik.fr"
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: "Présentation homelab"
+    group: "Sites internet"
+    url: "https://homelab.loutik.fr"
     interval: 5m
     conditions:
       - "[STATUS] == 200"
@@ -110,6 +118,13 @@ endpoints:
   - name: "LoutikDIGEST (Veille techno)"
     group: "Services"
     url: "https://digest.loutik.fr"
+    interval: 10m
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: "Miniflux (Veille techno)"
+    group: "Services"
+    url: "https://rss.loutik.fr"
     interval: 10m
     conditions:
       - "[STATUS] == 200"
