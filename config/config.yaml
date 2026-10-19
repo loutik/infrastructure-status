@@ -48,13 +48,6 @@ endpoints:
     conditions:
       - "[STATUS] == 200"
 
-  - name: "Présentation homelab"
-    group: "Sites internet"
-    url: "https://homelab.loutik.fr"
-    interval: 5m
-    conditions:
-      - "[STATUS] == 200"
-
   # GROUPE : COMPUTE (HYPERVISEURS)
   - name: "Hyperviseur 1"
     group: "Compute"
