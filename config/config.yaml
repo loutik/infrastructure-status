@@ -6,7 +6,7 @@ ui:
   title: "LoutikCLOUD - Statut"
   header: "LoutikCLOUD"
   dashboard-heading: "État des Services"
-  dashboard-subheading: "Monitoring temps réel des plateformes LoutikCLOUD"
+  dashboard-subheading: "Monitoring en temps réel des plateformes LoutikCLOUD"
   logo: https://raw.githubusercontent.com/loutik/design-assets/main/loutikstatus/logo_loutikstatus.png
 
 announcements:
