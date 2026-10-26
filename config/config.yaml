@@ -81,7 +81,7 @@ endpoints:
 
   # GROUPE : Network
   - name: NS1 (Autoritaire)
-    url: "dns://10.0.13.1"
+    url: "10.0.13.1"
     interval: 10s
     dns:
       query-name: "ns1.infra.loutik.fr"
@@ -91,7 +91,7 @@ endpoints:
       - "[DNS_RCODE] == NOERROR"
 
   - name: NS2 (Autoritaire)
-    url: "dns://10.0.13.2"
+    url: "10.0.13.2"
     interval: 10s
     dns:
       query-name: "ns2.infra.loutik.fr"
@@ -100,25 +100,25 @@ endpoints:
       - "[CONNECTED] == true"
       - "[DNS_RCODE] == NOERROR"
 
-    - name: DNS1 (Récursif)
-      url: "dns://10.0.13.253"
-      interval: 10s
-      dns:
-        query-name: "ns2.infra.loutik.fr"
-        query-type: "A"
-      conditions:
-        - "[CONNECTED] == true"
-        - "[DNS_RCODE] == NOERROR"
-        
-    - name: DNS2 (Récursif)
-      url: "dns://10.0.13.252"
-      interval: 10s
-      dns:
-        query-name: "ns2.infra.loutik.fr"
-        query-type: "A"
-      conditions:
-        - "[CONNECTED] == true"
-        - "[DNS_RCODE] == NOERROR"
+  - name: DNS1 (Récursif)
+    url: "10.0.13.253"
+    interval: 10s
+    dns:
+      query-name: "ns2.infra.loutik.fr"
+      query-type: "A"
+    conditions:
+      - "[CONNECTED] == true"
+      - "[DNS_RCODE] == NOERROR"
+      
+  - name: DNS2 (Récursif)
+    url: "10.0.13.252"
+    interval: 10s
+    dns:
+      query-name: "ns2.infra.loutik.fr"
+      query-type: "A"
+    conditions:
+      - "[CONNECTED] == true"
+      - "[DNS_RCODE] == NOERROR"
 
   # GROUPE : SERVICES
   - name: "LoutikSSO (Authentik)"
